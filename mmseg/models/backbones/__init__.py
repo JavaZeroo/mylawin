@@ -22,6 +22,8 @@ from .twins import PCPVT, SVT
 from .unet import UNet
 from .vit import VisionTransformer
 
+from .mix_transformer import *
+
 __all__ = [
     'ResNet', 'ResNetV1c', 'ResNetV1d', 'ResNeXt', 'HRNet', 'FastSCNN',
     'ResNeSt', 'MobileNetV2', 'UNet', 'CGNet', 'MobileNetV3',

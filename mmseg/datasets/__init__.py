@@ -22,6 +22,8 @@ from .potsdam import PotsdamDataset
 from .stare import STAREDataset
 from .voc import PascalVOCDataset
 
+from .my import MyDataset
+
 __all__ = [
     'CustomDataset', 'build_dataloader', 'ConcatDataset', 'RepeatDataset',
     'DATASETS', 'build_dataset', 'PIPELINES', 'CityscapesDataset',
@@ -31,5 +33,5 @@ __all__ = [
     'COCOStuffDataset', 'LoveDADataset', 'MultiImageMixDataset',
     'iSAIDDataset', 'ISPRSDataset', 'PotsdamDataset', 'FaceOccludedDataset',
     'ImageNetSDataset', 'LoadImageNetSAnnotations',
-    'LoadImageNetSImageFromFile'
+    'LoadImageNetSImageFromFile', 'MyDataset'
 ]
