@@ -6,6 +6,42 @@ from mmcv.cnn.utils.sync_bn import revert_sync_batchnorm
 from mmseg.apis import inference_segmentor, init_segmentor, show_result_pyplot
 from mmseg.core.evaluation import get_palette
 
+CLASSES = ( "WATER",
+            "ASPHALT",
+            "GRASS",
+            "HUMAN",
+            "ANIMAL",
+            "HIGH_VEGETATION",
+            "GROUND_VEHICLE",
+            "FACADE",
+            "WIRE",
+            "GARDEN_FURNITURE",
+            "CONCRETE",
+            "ROOF",
+            "GRAVEL",
+            "SOIL",
+            "PRIMEAIR_PATTERN",
+            "SNOW")
+            
+PALETTE = \
+    ([ 148, 218, 255 ],  # light blue
+    [  85,  85,  85 ],  # almost black
+    [ 200, 219, 190 ],  # light green
+    [ 166, 133, 226 ],  # purple    
+    [ 255, 171, 225 ],  # pink
+    [  40, 150, 114 ],  # green
+    [ 234, 144, 133 ],  # orange
+    [  89,  82,  96 ],  # dark gray
+    [ 255, 255,   0 ],  # yellow
+    [ 110,  87, 121 ],  # dark purple
+    [ 205, 201, 195 ],  # light gray
+    [ 212,  80, 121 ],  # medium red
+    [ 159, 135, 114 ],  # light brown
+    [ 102,  90,  72 ],  # dark brown
+    [ 255, 255, 102 ],  # bright yellow
+    [ 251, 247, 240 ])  # almost white
+
+
 
 def main():
     parser = ArgumentParser()
@@ -37,7 +73,7 @@ def main():
         model,
         args.img,
         result,
-        get_palette(args.palette),
+        PALETTE,
         opacity=args.opacity,
         out_file=args.out_file)
 
