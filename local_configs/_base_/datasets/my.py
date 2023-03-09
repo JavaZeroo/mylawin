@@ -1,8 +1,8 @@
 # dataset settings
 dataset_type = 'MyDataset'
-data_root = '/home/jimmy/data'
+data_root = '/root/autodl-tmp/data/'
 img_norm_cfg = dict(
-    mean=[0.32057211, 0.32057211, 0.32057211], std=[0.17511987, 0.17511987, 0.17511987], to_rgb=True)
+    mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 crop_size = (1024, 1024)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -32,8 +32,8 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    samples_per_gpu=4,
-    workers_per_gpu=4,
+    samples_per_gpu=2,
+    workers_per_gpu=1,
     train=dict(
         type=dataset_type,
         data_root=data_root,
